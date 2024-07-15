@@ -27,7 +27,7 @@ function Alert(text) {
 
 export const GetAllproduct = createAsyncThunk('product/getAll', async() => {
     try {
-        let result = await axios.get('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/all');
+        let result = await axios.get('https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/all');
         return result;
     } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ export const GetAllproduct = createAsyncThunk('product/getAll', async() => {
 
 export const GetAllcategories = createAsyncThunk('product/getcategories', async() => {
   try {
-      let result = await axios.get('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/');
+      let result = await axios.get('https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/');
       return result.data;
   } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ export const GetAllcategories = createAsyncThunk('product/getcategories', async(
 
 export const getProdutById = createAsyncThunk('/product/productid', async(id) => {
   try {
-    let result = await axios.get(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
+    let result = await axios.get(`https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
     return result;
   } catch (error) {
     console.log(error);
@@ -54,7 +54,7 @@ export const getProdutById = createAsyncThunk('/product/productid', async(id) =>
 
 export const getProdutById_Wish = createAsyncThunk('/product/productidWish', async(id) => {
   try {
-    let result = await axios.get(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
+    let result = await axios.get(`https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
     return result;
   } catch (error) {
     console.log(error);
@@ -64,7 +64,7 @@ export const getProdutById_Wish = createAsyncThunk('/product/productidWish', asy
 
 export const PostProduct = createAsyncThunk('product/add', async(product) =>{
   try {
-    let result = await axios.post(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/`, product);
+    let result = await axios.post(`https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/`, product);
     return result;
   } catch (error) {
     console.log(error);
@@ -73,7 +73,7 @@ export const PostProduct = createAsyncThunk('product/add', async(product) =>{
 
 export const DeleteProduct = createAsyncThunk('product/delete', async(id) => {
   try {
-    let result = await axios.delete(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
+    let result = await axios.delete(`https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`);
     return result;
   } catch (error) {
     console.log(error);
@@ -82,7 +82,7 @@ export const DeleteProduct = createAsyncThunk('product/delete', async(id) => {
 
 export const UpdateProduct_Put = createAsyncThunk('product/update', async({id, newProduct}) => {
   try {
-    let result = await axios.put(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`, newProduct);
+    let result = await axios.put(`https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/${id}`, newProduct);
     return result.data;
   } catch (error) {
     console.log(error);
@@ -91,7 +91,7 @@ export const UpdateProduct_Put = createAsyncThunk('product/update', async({id, n
 
 export const GetHighestPrice = createAsyncThunk('product/getHighestPrice', async () => {
   try {
-      let result = await axios.get('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/highestprice/price');
+      let result = await axios.get('https://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/product/highestprice/price');
       return result.data;
   } catch (error) {
       console.log(error);
