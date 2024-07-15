@@ -27,7 +27,7 @@ function Alert(text) {
 
 export const AddOrder = createAsyncThunk('order/add', async ({ userId, products, totalAmount }) => {
     try {
-        let result = await axios.post('http://ecommerce-project-pied.vercel.app/order/', { userId, products, totalAmount });
+        let result = await axios.post('http://api-blush-xi.vercel.app/order/', { userId, products, totalAmount });
         return result.data;
     } catch (error) {
         console.log(error);
@@ -37,7 +37,7 @@ export const AddOrder = createAsyncThunk('order/add', async ({ userId, products,
 
 export const AllOrders = createAsyncThunk('order/all', async() => {
     try {
-        let result = await axios.get('http://ecommerce-project-pied.vercel.app/order/');
+        let result = await axios.get('http://api-blush-xi.vercel.app/order/');
         return result;
     } catch (error) {
         console.log(error);
@@ -46,7 +46,7 @@ export const AllOrders = createAsyncThunk('order/all', async() => {
 
 export const UpdateOrder_Put = createAsyncThunk('order/all', async({id, state}) => {
     try {
-        let result = await axios.put(`http://ecommerce-project-pied.vercel.app/order/${id}`, state);
+        let result = await axios.put(`http://api-blush-xi.vercel.app/order/${id}`, state);
         return result;
     } catch (error) {
         console.log(error);
