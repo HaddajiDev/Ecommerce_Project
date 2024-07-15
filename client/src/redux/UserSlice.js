@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 export const userRegister = createAsyncThunk("user/register", async(user)=>{
 	try {
-		let result = await axios.post('http://ecommerce-back-beta.vercel.app/user/register', user);
+		let result = await axios.post('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/register', user);
 		return await result;
 	} catch (error) {
 		console.log(error);
@@ -16,7 +16,7 @@ export const userRegister = createAsyncThunk("user/register", async(user)=>{
 
 export const userLogin = createAsyncThunk("user/login", async(user)=>{
 	try {
-		let result = await axios.post('http://ecommerce-back-beta.vercel.app/user/login', user);		
+		let result = await axios.post('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/login', user);		
 		return await result;
 	} catch (error) {
 		console.log(error);
@@ -25,7 +25,7 @@ export const userLogin = createAsyncThunk("user/login", async(user)=>{
 
 export const currentUser = createAsyncThunk("user/current", async()=>{
 	try {
-		let result = await axios.get('http://ecommerce-back-beta.vercel.app/user/current', {
+		let result = await axios.get('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/current', {
 			headers:{
 				Authorization: localStorage.getItem("token"),
 			}
@@ -38,7 +38,7 @@ export const currentUser = createAsyncThunk("user/current", async()=>{
 
 export const UpdateUser = createAsyncThunk('user/update', async ({ id, edited }, { rejectWithValue }) => {
     try {
-        let result = await axios.put(`http://ecommerce-back-beta.vercel.app/user/${id}`, edited);
+        let result = await axios.put(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}`, edited);
         return result.data;
     } catch (error) {
         console.error('Error updating user:', error.response?.data || error.message);
@@ -48,7 +48,7 @@ export const UpdateUser = createAsyncThunk('user/update', async ({ id, edited },
 
 export const AddToCart = createAsyncThunk('user/cart', async({id, stuff}) => {
 	try {
-		let result = await axios.post(`http://ecommerce-back-beta.vercel.app/user/${id}/cart`, stuff);
+		let result = await axios.post(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}/cart`, stuff);
 		return result;
 	} catch (error) {
 		console.log(error);
@@ -58,7 +58,7 @@ export const AddToCart = createAsyncThunk('user/cart', async({id, stuff}) => {
 
 export const AddToWishList = createAsyncThunk('user/wishlist', async({id, stuff_1}) => {
 	try {
-		let result = await axios.post(`http://ecommerce-back-beta.vercel.app/user/${id}/wishlist`, stuff_1);
+		let result = await axios.post(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}/wishlist`, stuff_1);
 		return result.data;
 	} catch (error) {
 		console.log(error);
@@ -67,7 +67,7 @@ export const AddToWishList = createAsyncThunk('user/wishlist', async({id, stuff_
 
 export const getUserOrders = createAsyncThunk('user/order', async(id) => {
     try {
-        let result = await axios.get(`http://ecommerce-back-beta.vercel.app/user/${id}/order`);
+        let result = await axios.get(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}/order`);
 		return result;
     } catch (error) {
         console.log(error);
@@ -76,7 +76,7 @@ export const getUserOrders = createAsyncThunk('user/order', async(id) => {
 
 export const GetAllUsers = createAsyncThunk('user/all', async() => {
 	try {
-		let result = await axios.get('http://ecommerce-back-beta.vercel.app/user/');
+		let result = await axios.get('http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/');
 		return result;
 	} catch (error) {
 		console.log(error);
@@ -85,7 +85,7 @@ export const GetAllUsers = createAsyncThunk('user/all', async() => {
 
 export const DeleteUser = createAsyncThunk('user/delete', async(id) => {
 	try {
-		let result = await axios.delete(`http://ecommerce-back-beta.vercel.app/user/${id}`);
+		let result = await axios.delete(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}`);
 		return result;
 	} catch (error) {
 		console.log(error);
@@ -94,7 +94,7 @@ export const DeleteUser = createAsyncThunk('user/delete', async(id) => {
 
 export const GetOrder = createAsyncThunk('user/one', async (id, { rejectWithValue }) => {
     try {
-        let result = await axios.get(`http://ecommerce-back-beta.vercel.app/user/${id}/order`);
+        let result = await axios.get(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/${id}/order`);
         console.log(result.data);
         return result.data;
     } catch (error) {
@@ -105,7 +105,7 @@ export const GetOrder = createAsyncThunk('user/one', async (id, { rejectWithValu
 
 export const RemoveCartItem = createAsyncThunk('user/cartDel', async({userId, cartId}) =>{
 	try {
-		await axios.delete(`http://ecommerce-back-beta.vercel.app/user/cart/${userId}/${cartId}`);
+		await axios.delete(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/cart/${userId}/${cartId}`);
 	} catch (error) {
 		console.log(error);
 	}
@@ -113,7 +113,7 @@ export const RemoveCartItem = createAsyncThunk('user/cartDel', async({userId, ca
 
 export const RemoveWishListItem = createAsyncThunk('user/wishDel', async({userId, cartId}) =>{
 	try {
-		await axios.delete(`http://ecommerce-back-beta.vercel.app/user/wishlist/${userId}/${cartId}`);
+		await axios.delete(`http://ecommerce-back-nknnimtn8-haddajidevs-projects.vercel.app/user/wishlist/${userId}/${cartId}`);
 	} catch (error) {
 		console.log(error);
 	}
