@@ -21,6 +21,6 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 
 
 
-app.listen(3000, (err) =>{
-	err ? console.log(err) : console.log(`Server running on port ${3000}`);
+app.listen(PORT, (err) =>{
+	err ? console.log(err) : console.log(`Server running on port ${PORT}`);
 });
