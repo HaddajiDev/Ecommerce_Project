@@ -37,11 +37,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env PORT=5001 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "back": "cd .. && cd client && nodemon index.js",
+    "back": "nodemon index.js",
     "app": "concurrently \"npm start\" \"npm run back\""
   },
   "eslintConfig": {
